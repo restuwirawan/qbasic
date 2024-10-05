@@ -1,0 +1,50 @@
+' Program Bubble Sort dalam QBASIC
+
+CLS
+PRINT "Program Pengurutan Bubble Sort"
+PRINT "-------------------------------"
+
+' Deklarasi variabel
+DIM A(100) AS INTEGER
+DIM N AS INTEGER
+DIM I AS INTEGER
+DIM J AS INTEGER
+DIM TEMP AS INTEGER
+
+' Input jumlah elemen
+INPUT "Masukkan jumlah elemen: ", N
+
+' Input elemen array
+FOR I = 1 TO N
+    PRINT "Masukkan elemen ke-"; I; ": ";
+    INPUT A(I)
+NEXT I
+
+' Menampilkan array sebelum pengurutan
+PRINT
+PRINT "Array sebelum diurutkan:"
+FOR I = 1 TO N
+    PRINT A(I);
+NEXT I
+PRINT
+
+' Proses Bubble Sort
+FOR I = 1 TO N - 1
+    FOR J = 1 TO N - I
+        IF A(J) > A(J + 1) THEN
+            TEMP = A(J)
+            A(J) = A(J + 1)
+            A(J + 1) = TEMP
+        END IF
+    NEXT J
+NEXT I
+
+' Menampilkan array setelah pengurutan
+PRINT
+PRINT "Array setelah diurutkan:"
+FOR I = 1 TO N
+    PRINT A(I);
+NEXT I
+PRINT
+
+END
